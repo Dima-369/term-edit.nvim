@@ -1,5 +1,7 @@
 # Fork changes
 
+**Note**: This does not really work well! The `s` to go to end of line and `b` keys still misbehave.
+
 - since I am using `Programmer Dvorak` and I had issues setting up keybindings through `opts`, I decided to just modify the default plugin keybindings
 
 # Original README
