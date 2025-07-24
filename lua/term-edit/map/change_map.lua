@@ -2,6 +2,7 @@ local m = require 'term-edit.map.m'
 local coord = require 'term-edit.coord'
 local async = require 'term-edit.async'
 local delete = require 'term-edit.delete'
+local navigate = require 'term-edit.navigate'
 
 local M = {}
 
@@ -24,7 +25,9 @@ function M.enable()
   m.map('C', function()
     delete.delete_range(coord.get_coord '.', coord.get_coord '$')
   end)
-  m.remap('s', 'cl')
+  m.map('s', function()
+    navigate.navigate_normal(coord.get_coord '$')
+  end)
   m.remap('S', 'cc')
 end
 
