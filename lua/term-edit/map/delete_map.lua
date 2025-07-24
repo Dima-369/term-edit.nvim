@@ -14,19 +14,7 @@ end
 
 function M.enable()
   m.map('d', function()
-    local start = coord.get_coord 'v'
-    local end_ = coord.get_coord '.'
-    async.feedkeys('<Esc>', function()
-      delete.delete_range(start, end_, function()
-        async.quit_insert(adjust_cursor(start))
-      end)
-    end)
-  end, { mode = 'x' })
-  m.omap('d', function()
-    local start = coord.get_coord "'["
-    delete.delete_range(start, coord.get_coord "']", function()
-      async.quit_insert(adjust_cursor(start))
-    end)
+    navigate.navigate_normal(coord.get_coord '0')
   end)
   m.map('dd', function()
     local start = coord.get_coord '0'
@@ -62,6 +50,8 @@ function M.enable()
   m.remap('x', 'd', { mode = 'x' })
   m.remap('X', 'dh')
   m.remap('X', 'D', { mode = 'x' })
+  m.remap('p', 'dw')  -- delete word to right
+  m.remap('(', 'dl')  -- delete char to right
 end
 
 return M
