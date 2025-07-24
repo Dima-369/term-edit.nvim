@@ -1,3 +1,9 @@
+# Fork changes
+
+- since I am using `Programmer Dvorak` and I had issues setting up keybindings through `opts`, I decided to just modify the default plugin keybindings
+
+# Original README
+
 # Vim Keybindings in Neovim's Built-in Terminal
 
 No more smashing left and right arrow when you make a typo.\

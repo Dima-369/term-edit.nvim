@@ -9,7 +9,7 @@ function M.enable()
     vim.cmd 'startinsert'
   end)
 
-  m.map('i', function()
+  m.map('u', function()
     insert.insert_at(coord.get_coord '.')
   end)
   m.map('a', function()
